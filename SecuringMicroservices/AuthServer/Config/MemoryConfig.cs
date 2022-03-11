@@ -32,7 +32,7 @@ namespace AuthServer.Config
                 }
             };
 
-        public static IEnumerable<TestUser> TestUsers() =>
+        public static List<TestUser> TestUsers() =>
             new List<TestUser>
             {
                 new TestUser
