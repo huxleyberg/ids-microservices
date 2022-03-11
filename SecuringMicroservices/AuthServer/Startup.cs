@@ -27,7 +27,7 @@ namespace AuthServer
                 app.UseDeveloperExceptionPage();
             }
 
-           
+            app.UseIdentityServer();
         }
     }
 }
