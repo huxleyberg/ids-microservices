@@ -27,6 +27,7 @@ namespace AuthServer.Config
                 {
                     ClientId = "first-client",
                     ClientSecrets = new []{new Secret("chidiSecret".ToSha512())},
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     AllowedScopes = {IdentityServerConstants.StandardScopes.OpenId}
 
                 }
