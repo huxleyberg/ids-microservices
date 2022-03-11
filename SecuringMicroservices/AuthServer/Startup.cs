@@ -23,6 +23,8 @@ namespace AuthServer
                 .AddTestUsers(MemoryConfig.TestUsers())
                 .AddDeveloperSigningCredential();
 
+            services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,8 +34,15 @@ namespace AuthServer
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
+            app.UseRouting();
             app.UseIdentityServer();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+            }
+          );
         }
     }
 }
